@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+        <legend>Login Details</legend>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" autofocus><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="email">Vitmail:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="email">Password(min 8 characters):</label>
+        <input type="password" id = "password" name="password" minlength="8" required>
+    </fieldset>
+    <input type="submit" value="Login">
+    <fieldset>
+        <legend>Courses Offered</legend><br><br>
+        <input type="radio" id="iwp" name="course" value="iwp" checked>
+            <label for="iwp">Internet and Web Programming</label>
+            <br>
+            <input type="radio" id="dsa" name="course" value="dsa">
+            <label for="dsa">Data Structures and Algorithm</label>
+            <br>
+            <input type="radio" id="lsm" name="course" value="lsm">
+            <label for="lsm">Lean Starup Management</label>
+            <br>
+            <input type="radio" id="ai" name="course" value="ai">
+            <label for="ai">Artificial Intelligence</label>
+            <br>
+            <input type="radio" id="pdc" name="course" value="pdc">
+            <label for="pdc">Parallel Distributed Computing</label>
+            <br>
+            <input type="radio" id="micro" name="course" value="micro">
+            <label for="micro">Microcontrollers and Microprocessors</label>
+            <br>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Slot</legend><br>
+        <br>
+        <input type="radio" id="morning" name="schedule" value="morning" checked>
+        <label for="morning">Morning Theory</label>
+        <br>
+        <input type="radio" id="evening" name="schedule" value="evening">
+        <label for="evening">Evening Theory</label>
+        <br>
+        <label for="selectslot">Select Slot</label>
+        <select name="slot" id="slot">
+            <option value="A1" selected>A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+            <option value="D1">D1</option>
+            <option value="D2">D2</option>
+            <option value="E1">E1</option>
+            <option value="E2">E2</option>
+            <option value="F1">F1</option>
+            <option value="F2">F2</option>
+            <option value="G1">G1</option>
+            <option value="G2">G2</option>
+        </select>
+    </fieldset>
+    <input type="submit" value="Register">
+    </form>
+</body>
+</html>
