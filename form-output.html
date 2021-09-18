@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action="/action_page.php" id="numform" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+0
+<input type="range" id="a" name="a" value="50">
+100 +
+<input type="number" id="b" name="b" value="50">
+<input type="submit">
+</form>
+<output form="numform" name="x" for="a b"></output>
+<p>The output element below is outside the form, but still a part of it.</p>
+
+<p><strong>Note:</strong> The form attribute is not supported in IE/Edge</p>
+</body>
+</html>
