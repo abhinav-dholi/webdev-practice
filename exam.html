@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: absolute;
+        }
+
+        #navbar::before {
+            content: "";
+
+            background-color: rgb(68, 11, 11);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            top: 0px;
+            left: 0px;
+        }
+
+        #logo {
+            margin: 13px 23px;
+        }
+
+        #logo img {
+            display: block;
+            width: 90px;
+            border-radius: 50%;
+            margin: 5px 9px;
+        }
+
+        #navbar ul {
+            display: flex;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #navbar ul li {
+            /* color: white; */
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        #myimg{
+            display: block;
+            position: absolute;
+            margin-top: 86px;
+
+            width: 250px;
+        }
+        /* .myimg2{
+            display: block;
+            position: absolute;
+            margin-left: 582px;
+            margin-top: 86px;
+            width: 250px;
+        }
+        #imim{
+            margin-top: 335px;
+        } */ 
+
+        .division{
+            display: flex;
+            flex-direction: column;
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            position: relative;
+            margin-left: 582px;
+            margin-top: 86px;
+            z-index: 1;
+        }
+        .list{
+            background-color: beige;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li class="item"><a href="#">Item1</a></li>
+            <li class="item"><a href="#">Item2</a></li>
+            <li class="item"><a href="#">Item3</a></li>
+            <li class="item"><a href="#">Item4</a></li>
+            <li class="item"><a href="#">Item5</a></li>
+            <li class="item"><a href="#">Item6</a></li>
+        </ul>
+    </nav>
+    <div id="d2" class="division">
+        <h1>New Items</h1>
+        <ul class="list">
+            <li>Item1</li>
+            <li>Item1</li>
+            <li>Item1</li>
+            <li>Item1</li>
+            <li>Item1</li>
+        </ul>
+    </div>
+    <div id="d2" class="division">
+        <h1>New Items</h1>
+        <ul class="list">
+            <li>Item1</li>
+            <li>Item1</li>
+            <li>Item1</li>
+            <li>Item1</li>
+            <li>Item1</li>
+        </ul>
+    </div>
+     <img id="myimg" src="..\coffee.jpg" alt="img">
+    <h1>Lorem ipsum dolor sit.</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, nihil rem excepturi repellat atque nisi ut quisquam quam provident, non quia voluptates aliquam in temporibus architecto molestias labore. Porro veritatis maiores quos expedita est impedit magnam, fugiat fugit pariatur quasi laboriosam ex nisi ab perferendis dignissimos officia tempore deleniti sunt. Eum corporis quam, sint sit doloribus amet dicta est dolore odit totam perferendis tempora assumenda iusto architecto quos ex quo minus quod a fugiat excepturi. Quas expedita facere velit officia sapiente accusamus sequi aperiam, repellat vero iusto, placeat saepe minus. Iure numquam reprehenderit itaque! Error, facere ea! Doloribus, ipsa corporis.</p>
+</body>
+
+</html>
