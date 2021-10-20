@@ -1,0 +1,8 @@
+#contact {
+    position: relative;
+    margin-top: 117px;
+}
+
+#client-section::before {
+    padding-bottom: 117px;
+}

@@ -1,0 +1,11 @@
+#navbar {
+    padding-left: 30px;
+}
+
+#contact {
+    margin-top: 266px;
+}
+
+#client-section::before {
+    padding-bottom: 266px;
+}
