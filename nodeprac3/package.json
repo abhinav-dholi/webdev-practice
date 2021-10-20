@@ -1,0 +1,21 @@
+{
+  "name": "nodeprac3",
+  "version": "1.0.0",
+  "description": "kuch bhi hai pta nahi",
+  "main": "nodeprac3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "khikhikhikhi"
+  ],
+  "author": "dholiji",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "slugify": "^1.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

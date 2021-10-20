@@ -1,0 +1,110 @@
+show dbs
+use dholikart
+show collections
+
+// Inserting data in mongodb
+
+use dholikart
+db.items.insertOne({name : "Samsung 30s", price: 22000, rating: 4.5, qty: 233, sold : 98})
+
+db.items.insertMany([{name : "Samsung 30s", price: 22000, rating: 4.5, qty: 233, sold : 98}, {name : "Moto 5s", price: 32000, rating: 3, qty: 123, sold : 77},{name : "Iphone 5s", price: 132000, rating: 2, qty: 1223, sold : 177}])
+
+db.items.insertOne({name : "Oneplus 7t", price: 52000, rating: 4, qty: 349, sold : 198, is_Big : true})
+
+// Searching data in mongodb
+
+db.items.find({rating : 4.5}) //This is will return objects with rating 4.5
+db.items.find({rating : {$gt: 3}}) //This is will return objects with rating greater than 3
+db.items.find({rating : {$gte: 3}}) //This is will return objects with rating greater than and equal to 3
+db.items.find({rating : {$lt: 3}}) //This is will return objects with rating less than 3
+
+//And operator 
+db.items.find({rating : {$gte: 3}, price :{$gt: 25000}})
+
+//or operator 
+db.items.find(
+    {$or: 
+        [
+        {rating : {$gte: 3}}, 
+        {price :{$gt: 25000}}
+        ]
+    }
+    ) //Mind the brackets they suck :(
+
+//Giving one more parameter to the query
+
+db.items.find({rating : {$gte: 3}}, {rating : 1})
+
+    --output
+    { "_id" : ObjectId("616e9a5ad204e1052432e02f"), "rating" : 4.5 }
+    { "_id" : ObjectId("616e9c32d204e1052432e030"), "rating" : 4.5 }
+    { "_id" : ObjectId("616e9c32d204e1052432e031"), "rating" : 3 }
+    { "_id" : ObjectId("616eb091e65eae9c17b0a9cc"), "rating" : 4 }
+
+db.items.find({rating : {$gte: 3}}, {rating : 1, name:1}) 
+
+    --output
+    { "_id" : ObjectId("616e9a5ad204e1052432e02f"), "name" : "Samsung 30s", "rating" : 4.5 }
+    { "_id" : ObjectId("616e9c32d204e1052432e030"), "name" : "Samsung 30s", "rating" : 4.5 }
+    { "_id" : ObjectId("616e9c32d204e1052432e031"), "name" : "Moto 5s", "rating" : 3 }
+    { "_id" : ObjectId("616eb091e65eae9c17b0a9cc"), "name" : "Oneplus 7t", "rating" : 4 }
+
+//deleting a record
+
+db.items.deleteOne({price : 22000}) // this will delete the first matching entry
+db.items.deleteMany({price : 22000}) // this will delete all the matching entries
+
+//CRUD OPERATIONS
+
+db.anotherCollection.insertOne({a:69}) //creating a different collection
+
+db.items.find() //present conditions
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346c"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346d"), "name" : "Moto 5s", "price" : 32000, "rating" : 3, "qty" : 123, "sold" : 77 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346e"), "name" : "Iphone 5s", "price" : 132000, "rating" : 2, "qty" : 1223, "sold" : 177 }
+{ "_id" : ObjectId("616ecbe72b4ab794ce95346f"), "name" : "Oneplus 7t", "price" : 52000, "rating" : 4, "qty" : 349, "sold" : 198, "is_Big" : true } 
+
+//updating records
+
+db.items.updateOne({name: "Oneplus 7t"},{$set: {price: 2000}})
+
+//output
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.items.find()
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346c"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346d"), "name" : "Moto 5s", "price" : 32000, "rating" : 3, "qty" : 123, "sold" : 77 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346e"), "name" : "Iphone 5s", "price" : 132000, "rating" : 2, "qty" : 1223, "sold" : 177 }
+{ "_id" : ObjectId("616ecbe72b4ab794ce95346f"), "name" : "Oneplus 7t", "price" : 2000, "rating" : 4, "qty" : 349, "sold" : 198, "is_Big" : true }   
+
+//present condition
+
+> db.items.find()
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346c"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346d"), "name" : "Moto 5s", "price" : 32000, "rating" : 3, "qty" : 123, "sold" : 77 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346e"), "name" : "Iphone 5s", "price" : 132000, "rating" : 2, "qty" : 1223, "sold" : 177 }
+{ "_id" : ObjectId("616ecbe72b4ab794ce95346f"), "name" : "Oneplus 7t", "price" : 2000, "rating" : 4, "qty" : 349, "sold" : 198, "is_Big" : true }   
+{ "_id" : ObjectId("616ecc9d2b4ab794ce953470"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecc9d2b4ab794ce953471"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecc9e2b4ab794ce953472"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecc9f2b4ab794ce953473"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecca02b4ab794ce953474"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecca12b4ab794ce953475"), "name" : "Samsung 30s", "price" : 22000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+
+db.items.updateMany({name: "Samsung 30s"},{$set: {price: 2000}}) //updating multiple items
+
+//output
+
+{ "acknowledged" : true, "matchedCount" : 7, "modifiedCount" : 7 }
+> db.items.find()
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346c"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346d"), "name" : "Moto 5s", "price" : 32000, "rating" : 3, "qty" : 123, "sold" : 77 }
+{ "_id" : ObjectId("616ecbc62b4ab794ce95346e"), "name" : "Iphone 5s", "price" : 132000, "rating" : 2, "qty" : 1223, "sold" : 177 }
+{ "_id" : ObjectId("616ecbe72b4ab794ce95346f"), "name" : "Oneplus 7t", "price" : 2000, "rating" : 4, "qty" : 349, "sold" : 198, "is_Big" : true }   
+{ "_id" : ObjectId("616ecc9d2b4ab794ce953470"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecc9d2b4ab794ce953471"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecc9e2b4ab794ce953472"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecc9f2b4ab794ce953473"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecca02b4ab794ce953474"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+{ "_id" : ObjectId("616ecca12b4ab794ce953475"), "name" : "Samsung 30s", "price" : 2000, "rating" : 4.5, "qty" : 233, "sold" : 98 }
+
+

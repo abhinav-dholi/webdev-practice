@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dholi Dance Academy</title>
+    <script src="/static/index.js"></script>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+#logo{
+    display: flex;
+    color: white;
+    align-items: center;
+    margin: 0px 14px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+#logo img{
+    height: 2rem;
+    filter: invert(1);
+}
+
+#navbar{
+    background-color: #d14343;
+    padding: 13px 14px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#navbar li{
+    list-style: none;
+}
+
+#navbar li a{
+    text-decoration: none;
+    padding: 13px 20px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+#navbar li a:hover{
+    color: black;
+    font-size: 1.35rem;
+    /* font-weight: bolder; */
+}
+
+#introsection{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+    background: center / cover no-repeat url("/static/bg.jpg");
+    align-items: center;
+    height: 350px;
+    background-color: red;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 40px;
+    font-weight: bold;
+
+}
+
+#introsection div.small {
+    font-size: 1.3rem;
+    padding: 5px;
+}
+
+#missionsection{
+    height: 330px;
+    width: 85%;
+    margin:auto;
+}
+
+#missionsection h2{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+.card{
+    background-color: #fff6f6;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 29%;
+    margin: 19px 26px;
+    height: 209px;
+    display: inline-block;
+}
+
+.card h3{
+    text-align: center;
+    margin: 0 12px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-img{
+    height: 131px;
+    padding: 0 13px;
+    margin: 8px 30px;
+}
+
+.card-img img{
+    height: inherit;
+    /* padding: 0 13px; */
+}
+
+.card-content{
+    padding: 0px 10px;
+}
+
+.card-content p{
+
+    font-size: 19px;
+
+}
+/* .center{
+    justify-content: center;
+} */
+
+
+#sponsorssection{
+    height: 300px;
+    background-color: #d1434362;
+}
+
+#sponsorssection h2{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+#sponsors{
+    height: 200px;
+    max-width: 1000px;
+    margin: 27px auto;
+    margin-top: 30px;
+    
+}
+
+.spImage{
+    height: 80%;
+    margin: 8px;
+    padding: 0 14px;
+}
+
+#footer{
+    color: white;
+    display: flex;
+    height: 60px;
+    background-color: black;
+    justify-content:center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+
+}h1{
+    text-align: center;
+    margin: 12px 0;
+}
+
+.myForm{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+.myInput{
+    font-size: 16px;
+    width: 40%;
+    padding: 9px;
+    margin: 8px;
+    border: 2px solid #b94444;
+    border-radius: 12px;
+    outline: none;
+}
+.btn{
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+    background-color: #d14343bd;
+}
+
+    </style>
+    <nav class="top" id="navbar"> 
+      <ul>
+        <div id="logo"> <img src="/static/img/logo.png" alt="logo image">DDA</div>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Services</a> </li>
+        <li><a href="/">Class info</a></li>
+        <li><a href="/">Contact us</a></li>
+      </ul>
+    </nav>
+    <div class="container"> 
+      <h1>Contact us  </h1>
+      <form class="myForm" action="/contact" method="post">
+        <input class="myInput" type="text" name="name" placeholder="Enter your name">
+        <input class="myInput" type="number" name="phone" pattern="[0-9]{10}" placeholder="Enter your phone number">
+        <input class="myInput" type="email" name="email" placeholder="Enter your email id">
+        <input class="myInput" type="text" name="address" placeholder="Enter your address">
+        <input class="myInput" type="text" name="description" placeholder="Enter your description">
+        <button class="btn">
+           Submit</button>
+      </form>
+    </div>
+    <footer id="footer">
+       Copyright © 2019 dholidanceacademy.com | All rights reserved.            </footer>
+  </head>
+</html>
