@@ -1,5 +1,8 @@
 //I'll be adding the index to the files over here
 
+#DOM#
+
 1.html - DOM - basics (understanding document)
 2.html - DOM element selectors, jquery introduced
 3.html - Child, Parent and Traversing the DOM
+4.html - Creating removing and replacing elements.
