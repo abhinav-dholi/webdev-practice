@@ -8,3 +8,9 @@
 4.html - Creating removing and replacing elements.
 5.html - Event and Object
 6.html - Events in detail
+
+note: do regex from ppt
+PHP
+
+7.php - regex contact form
+8.php and 9.php - cookies
