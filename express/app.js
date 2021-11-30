@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const fs = require('fs')
 
-const port= 80; // default
+const port= 8000; // default
 
 //EXPRESS SPECIFIC
 
